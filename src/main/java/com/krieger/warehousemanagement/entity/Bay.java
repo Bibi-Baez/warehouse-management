@@ -21,7 +21,7 @@ public class Bay {
     @Column(nullable = false)
     private int _holdingPoints;
     private int _taken;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String tag;
     @Column(nullable = false)
     private String warehouse_code;
