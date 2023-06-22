@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  krieger:
+    build: .
+    ports:
+      - 8010:8010
+    depends_on:
+      - mysqlkrieger
+  mysqlkrieger:
+    image: mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_DATABASE: krieger_wh_mng
+      - MYSQL_USER: user01
+      - MYSQL_PASSWORD: secret
+      - MYSQL_ROOT_PASSWORD: secret
